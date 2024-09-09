@@ -1,0 +1,602 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Urbanist, system-ui, Avenir, Arial, Helvetica, sans-serif;
+  color-scheme: light dark;
+}
+
+:root {
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: #242424;
+  --helper-color: #99b9ff;
+}
+
+html {
+  font-size: 56.25%;
+}
+
+body {
+  margin: 0;
+  min-width: 32rem;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+h1 {
+  font-size: 5.4em;
+  line-height: 1.1;
+  font-weight: bold;
+  color: var(--bg-color);
+}
+
+p,
+li,
+label,
+input,
+textarea {
+  font-size: 1.8rem;
+  line-height: 1.56;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.06rem;
+  color: var(--bg-color);
+}
+
+input,
+textarea {
+  border-radius: 0.8rem;
+  background-color: var(--dark-color);
+}
+
+::placeholder {
+  color: var(--bg-color);
+}
+
+::-webkit-input-placeholder {
+  color: var(--bg-color);
+}
+
+a {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: var(--btn-color);
+  text-decoration: inherit;
+}
+
+/* react toastify Css */
+
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+}
+
+
+.container {
+  max-width: 140rem;
+  padding: 4rem 2.4rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* Reusable Component or Module Rules */
+
+button {
+  text-transform: capitalize;
+  padding: 1rem 2.2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: var(--btn-color);
+  border-radius: 0.8rem;
+  color: var(--bg-color);
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: border-color 0.3s;
+}
+
+
+.secondary-btn {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+}
+
+/* State Rules */
+
+button:hover {
+  box-shadow: inset 0 0 0 0.2rem var(--bg-color);
+}
+
+a:hover,
+a:active {
+  color: #535bf2
+}
+
+/* pseduo elements  */
+
+.main-heading {
+  position: relative;
+  text-transform: capitalize;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--btn-color);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover,
+  a.active {
+    color: #747bff;
+  }
+
+  /* button {
+    background-color: #f9f9f9;
+  } */
+}
+
+/* error page  */
+#error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#error-page .content {
+  max-width: 70rem;
+  text-align: center;
+}
+
+.content h2.header {
+  font-size: 18vw;
+  line-height: 1em;
+  animation: animate 10s ease-in-out infinite;
+  background: -webkit-repeating-linear-gradient(-60deg,
+      #71b7e6,
+      var(--btn-color),
+      #b98acc,
+      #ee8176,
+      #b98acc,
+      var(--btn-color),
+      #9b59b6);
+  background-size: 500%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+  position: relative;
+  -webkit-animation: animate 10s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  75% {
+    background-position: 0% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.content h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.content .btns a:hover {
+  background: var(--btn-color);
+  color: #fff;
+}
+
+/** -----------------------
+** registration section css
+** -------------------------  */
+
+.section-registration {
+  height: 100vh;
+  padding: 0 3.2rem;
+
+  & .container:first-child {
+    padding: 0;
+  }
+
+  & .container {
+    /* background-color: #fff; */
+    padding-top: 3.2rem;
+    align-items: center;
+
+    & .registration-image {
+      width: 50%;
+
+      & img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+
+  & .registration-form {
+    width: 50%;
+
+    & label {
+      display: block;
+      margin: 2.4rem 0 0.8rem 0;
+      text-transform: capitalize;
+    }
+
+    & input {
+      width: 100%;
+      padding: 0.6rem 0.6rem;
+    }
+
+    & button {
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+.adminNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.adminContainer {
+  display: grid;
+  padding-top: 0;
+  grid-template-columns: 1fr 3fr;
+}
+
+.adminList {
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.adminList li {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+/** -----------------------
+** services section css
+** -------------------------  */
+
+.section-services {
+
+  & .container:first-child {
+    padding: 0;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  /* & .grid-three-cols {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+  } */
+
+  & .card {
+    width: 270px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 1.2rem;
+    border: 0.2rem solid var(--helper-color);
+
+    & .card-img {
+      text-align: center;
+
+      & img {
+        width: 70%;
+        height: auto;
+        filter: drop-shadow(0 0 2rem 2rem #fff);
+        -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
+      }
+    }
+
+    & .card-details {
+      padding: 2.4rem;
+
+      & .gri {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+      }
+
+      & .gri p {
+        font-size: 1rem;
+      }
+
+      & h2 {
+        font-size: 2.2rem;
+        margin: 1.2rem 0 2.4rem 0;
+        color: var(--helper-color);
+      }
+
+      & p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+/** -----------------------
+** media query section css
+** -------------------------  */
+
+@media (width <=998px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .section-services {
+    & .grid-three-cols {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
+  }
+
+  .section-registration {
+    & .container {
+      & .reg-img img {
+        width: 60%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (width <=798px) {
+  /* html {
+    font-size: 56.25%;
+  } */
+
+  .section-registration {
+    & .container {
+      & .reg-img img {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    & .registration-form {
+      & input {
+        width: 100%;
+        padding: 0.6rem 0.6rem;
+      }
+    }
+  }
+}
+
+
+/***** Hero Section *****/
+
+.section-hero {
+  & .grid {
+    align-items: center;
+  }
+
+  .hero-content {
+    & p {
+      margin: 2.4rem 0 4.8rem 0;
+
+      &:first-child {
+        margin: 0 0 1.2rem 0;
+      }
+    }
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+
+    & img {
+      width: 70%;
+      height: auto;
+    }
+  }
+
+}
+
+
+/***** Hero End Section *****/
+
+
+/**** Contact Section Start ****/
+.section-contact {
+
+  & .container:first-child {
+    padding: 0;
+  }
+
+  & .contact-content {
+    padding: 0;
+
+    /* & h1 {
+      margin-bottom: 3.2rem;
+    } */
+  }
+
+  & .container {
+    padding-top: 3.2rem;
+    /* display: flex;
+    justify-content: space-evenly; */
+  }
+
+  & .contact-img {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 50%;
+
+    & img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  & .section-form {
+    width: 50%;
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+
+    & label {
+      display: block;
+      margin-bottom: 1.2rem;
+      text-transform: capitalize;
+    }
+
+    & input,
+    textarea {
+      width: 100%;
+      padding: 0.4rem 1rem;
+
+    }
+  }
+}
+
+/**** Contact Section End ****/
+
+
+/* **** Table CSS Start **** */
+
+.container {
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; 
+  border: 2px solid var(--btn-color);
+}
+
+.table tr {
+  border-bottom: 2px solid gray !important;
+}
+
+.table th{
+  color: var(--btn-color);
+  font-size: 2rem;
+}
+
+.table td{
+  color: var(--bg-color);
+  font-size: 1.5rem;
+}
+
+.table th, .table td {
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.table thead {
+  /* background-color: #f2f2f2; */
+  font-weight: bold;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .table, .table thead, .table tbody, .table th, .table td, .table tr {
+      display: block;
+  }
+
+  .table thead {
+      display: none;
+  }
+
+  .table tr {
+      margin-bottom: 50px;
+      border-bottom: 2px solid #ddd;
+  }
+
+  .table td {
+      display: block;
+      text-align: right;
+      position: relative;
+      padding-left: 50%;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .table td:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      width: calc(50% - 20px);
+      white-space: nowrap;
+      font-weight: bold;
+      text-align: left;
+  }
+}
+
+/* **** Table CSS End **** */
